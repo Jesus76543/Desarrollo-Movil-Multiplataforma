@@ -1,4 +1,4 @@
-/* Reset and base */
+/* Reset and base. */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -280,3 +280,5 @@
         bottom: 15px;
       }
     }
+
+
