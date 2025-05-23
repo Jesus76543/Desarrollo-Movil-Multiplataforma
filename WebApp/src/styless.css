@@ -1,0 +1,282 @@
+/* Reset and base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 1.8rem 1rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.9rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      user-select: none;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 0.4rem 1rem;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      background-color: #0056b3;
+      outline: none;
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 2rem auto 100px auto; /* bottom margin for form panel */
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .perfil {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 15px rgb(0 0 0 / 0.1);
+      padding: 1.8rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      user-select: none;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .perfil:hover {
+      box-shadow: 0 6px 20px rgb(0 0 0 / 0.15);
+    }
+
+    .perfil img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #007bff;
+    }
+
+    .perfil h2 {
+      color: #007bff;
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+
+    .perfil p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #444;
+      line-height: 1.4;
+    }
+
+    .perfil button {
+      background-color: #007bff;
+      border: none;
+      color: white;
+      padding: 0.55rem 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+
+    .perfil button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Pasatiempos ocultos */
+    .oculto {
+      display: none;
+      list-style: disc inside;
+      margin-top: 0.7rem;
+      color: #555;
+      font-style: italic;
+      text-align: left;
+      max-width: 180px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #ddd;
+      padding: 1rem;
+      text-align: center;
+      user-select: none;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    /* FORM PANEL */
+    #form-panel {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      box-shadow: 0 -6px 15px rgba(0,0,0,0.15);
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      max-height: 80vh;
+      transform: translateY(100%);
+      transition: transform 0.35s ease;
+      padding: 1.5rem 2rem 2.5rem 2rem;
+      overflow-y: auto;
+      z-index: 1000;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      left: 50%;
+      transform-origin: bottom center;
+      transform-style: preserve-3d;
+      transform: translate(-50%, 100%);
+    }
+
+    #form-panel.active {
+      transform: translate(-50%, 0);
+    }
+
+    #form-panel h2 {
+      margin-bottom: 1rem;
+      color: #007bff;
+      text-align: center;
+      font-size: 1.7rem;
+      font-weight: 700;
+      user-select: none;
+    }
+
+    #form-contacto {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    #form-contacto label {
+      font-weight: 600;
+      color: #333;
+    }
+
+    #form-contacto input,
+    #form-contacto textarea {
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      border: 1.8px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+      font-family: inherit;
+    }
+
+    #form-contacto input:focus,
+    #form-contacto textarea:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0,123,255,0.5);
+    }
+
+    #form-contacto button {
+      background-color: #007bff;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: 700;
+      padding: 0.9rem 1.4rem;
+      cursor: pointer;
+      font-size: 1.1rem;
+      align-self: center;
+      width: 140px;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+
+    #form-contacto button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Toggle Button fixed bottom center */
+    #toggle-form-btn {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 0.85rem 1.8rem;
+      border-radius: 28px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.5);
+      transition: background-color 0.3s ease;
+      z-index: 1100;
+      user-select: none;
+    }
+
+    #toggle-form-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Scrollbar styling for form panel overflow */
+    #form-panel::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    #form-panel::-webkit-scrollbar-thumb {
+      background-color: #007bff;
+      border-radius: 4px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      main {
+        margin: 2rem 1rem 130px 1rem;
+        grid-template-columns: 1fr;
+      }
+
+      #form-panel {
+        max-width: 100vw;
+        left: 0;
+        transform: translateX(0) translateY(100%);
+      }
+
+      #form-panel.active {
+        transform: translateX(0) translateY(0);
+        border-radius: 12px 12px 0 0;
+      }
+
+      #toggle-form-btn {
+        width: 160px;
+        bottom: 15px;
+      }
+    }

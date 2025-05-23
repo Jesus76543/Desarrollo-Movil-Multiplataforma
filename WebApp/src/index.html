@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Equipo WebApp</title>
+    <link rel="stylesheet" href="styless.css" />
+    <script src="app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Conoce a Nuestro Equipo</h1>
+    <nav>
+      <ul>
+        <li><a href="#miguel">Miguel</a></li>
+        <li><a href="#leo">Leonardo</a></li>
+        <li><a href="#leilany">Leilany</a></li>
+        <li><a href="#jesus">Jesús</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="miguel" class="perfil">
+      <img src="assets/WhatsApp Image 2025-05-22 at 8.08.37 PM (3).jpeg" alt="Foto de Miguel Ángel" aria-label="Miguel Ángel" />
+      <article>
+        <h2>Miguel Ángel Ramírez Jiménez</h2>
+        <p>Tengo 20 años y me apasiona la música, cocinar y jugar videojuegos.</p>
+        <button onclick="togglePasatiempos('p1')">Ver pasatiempos</button>
+        <ul id="p1" class="oculto">
+          <li>Música</li>
+          <li>Cocinar</li>
+          <li>Videojuegos</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="leo" class="perfil">
+      <img src="assets/WhatsApp Image 2025-05-22 at 8.08.37 PM (1).jpeg" alt="Foto de Leonardo" aria-label="Leonardo Vallejo" />
+      <article>
+        <h2>Leonardo Vallejo Herrera</h2>
+        <p>Tengo 19 años. Me gusta jugar videojuegos, escuchar música y ver series y películas.</p>
+        <button onclick="togglePasatiempos('p2')">Ver pasatiempos</button>
+        <ul id="p2" class="oculto">
+          <li>Videojuegos</li>
+          <li>Música</li>
+          <li>Series y películas</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="leilany" class="perfil">
+      <img src="assets/WhatsApp Image 2025-05-22 at 8.08.37 PM (2).jpeg" alt="Foto de Leilany" aria-label="Leilany Meza" />
+      <article>
+        <h2>Leilany Meza Quiñones</h2>
+        <p>Mis pasatiempos son escuchar música, diseñar páginas web y jugar básquet los fines de semana.</p>
+        <button onclick="togglePasatiempos('p3')">Ver pasatiempos</button>
+        <ul id="p3" class="oculto">
+          <li>Música</li>
+          <li>Diseño Web</li>
+          <li>Jugar básquet</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="jesus" class="perfil">
+      <img src="assets/WhatsApp Image 2025-05-22 at 8.08.37 PM.jpeg" alt="Foto de Jesús" aria-label="Jesús Ramiro" />
+      <article>
+        <h2>Jesús Ramiro Rivera Bracho</h2>
+        <p>Tengo 19 años y me gusta jugar fútbol, videojuegos y ver series y películas.</p>
+        <button onclick="togglePasatiempos('p4')">Ver pasatiempos</button>
+        <ul id="p4" class="oculto">
+          <li>Fútbol</li>
+          <li>Videojuegos</li>
+          <li>Series y películas</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <button id="toggle-form-btn" aria-expanded="false" aria-controls="form-panel">
+    Contacto
+  </button>
+
+  <section id="form-panel" aria-hidden="true" role="region" aria-label="Formulario de contacto">
+    <h2>Contacto</h2>
+    <form id="form-contacto">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="correo">Correo:</label>
+      <input type="email" id="correo" name="correo" required />
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 - Equipo WebApp</p>
+  </footer>
+  <script>
+    // Toggle formulario como pestaña inferior
+    const toggleFormBtn = document.getElementById('toggle-form-btn');
+    const formPanel = document.getElementById('form-panel');
+
+    toggleFormBtn.addEventListener('click', () => {
+      const isActive = formPanel.classList.toggle('active');
+      toggleFormBtn.setAttribute('aria-expanded', isActive);
+      formPanel.setAttribute('aria-hidden', !isActive);
+      // Cambio texto botón opcional:
+      // toggleFormBtn.textContent = isActive ? 'Cerrar contacto' : 'Contacto';
+    });
+
+    // Simulación de envío del formulario
+    document.getElementById('form-contacto').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.');
+      this.reset();
+      // También puedes cerrar la pestaña al enviar:
+      formPanel.classList.remove('active');
+      toggleFormBtn.setAttribute('aria-expanded', false);
+      formPanel.setAttribute('aria-hidden', true);
+    });
+  </script>
+
+
+</body>
+</html>
+
