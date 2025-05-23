@@ -29,4 +29,4 @@
       formPanel.classList.remove('active');
       toggleFormBtn.setAttribute('aria-expanded', false);
       formPanel.setAttribute('aria-hidden', true);
-    });
+    }):
